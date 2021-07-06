@@ -1,0 +1,104 @@
+----------------------------------------------------------------
+Sat Jun 26 09:17:22 CEST 2021:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-017a-472e-1e87-0000073a49a0 
+on database directory memory:C:\Users\lunat\Documents\Projekte_Bewerbung\TerminPlaner\6820208d-4fd3-4ff4-bf98-b5534aea0c2f with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@11028347 
+Loaded from file:/C:/Users/lunat/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=15.0.2+7-27
+user.dir=C:\Users\lunat\Documents\Projekte_Bewerbung\TerminPlaner
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sat Jun 26 09:17:41 CEST 2021:
+Shutting down instance a816c00e-017a-472e-1e87-0000073a49a0 on database directory memory:C:\Users\lunat\Documents\Projekte_Bewerbung\TerminPlaner\6820208d-4fd3-4ff4-bf98-b5534aea0c2f with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@11028347 
+----------------------------------------------------------------
+Sat Jun 26 09:17:42 CEST 2021:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance 176240b2-017a-472e-1e87-0000073a49a0 
+on database directory memory:C:\Users\lunat\Documents\Projekte_Bewerbung\TerminPlaner\785562dd-59c8-4b96-83f3-870c51e45e6d with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@11028347 
+Loaded from file:/C:/Users/lunat/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=15.0.2+7-27
+user.dir=C:\Users\lunat\Documents\Projekte_Bewerbung\TerminPlaner
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sat Jun 26 09:19:55 CEST 2021:
+Shutting down instance 176240b2-017a-472e-1e87-0000073a49a0 on database directory memory:C:\Users\lunat\Documents\Projekte_Bewerbung\TerminPlaner\785562dd-59c8-4b96-83f3-870c51e45e6d with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@11028347 
+----------------------------------------------------------------
+Sat Jun 26 09:19:56 CEST 2021:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a0f1c156-017a-472e-1e87-0000073a49a0 
+on database directory memory:C:\Users\lunat\Documents\Projekte_Bewerbung\TerminPlaner\1f2be628-89ca-46de-8ddf-f13af8c09dff with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@11028347 
+Loaded from file:/C:/Users/lunat/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=15.0.2+7-27
+user.dir=C:\Users\lunat\Documents\Projekte_Bewerbung\TerminPlaner
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sat Jun 26 09:21:52 CEST 2021:
+Shutting down instance a0f1c156-017a-472e-1e87-0000073a49a0 on database directory memory:C:\Users\lunat\Documents\Projekte_Bewerbung\TerminPlaner\1f2be628-89ca-46de-8ddf-f13af8c09dff with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@11028347 
+----------------------------------------------------------------
+Sat Jun 26 09:21:53 CEST 2021:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance 44c541fa-017a-472e-1e87-0000073a49a0 
+on database directory C:\Users\lunat\Documents\Projekte_Bewerbung\TerminPlaner\mydb with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@11028347 
+Loaded from file:/C:/Users/lunat/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=15.0.2+7-27
+user.dir=C:\Users\lunat\Documents\Projekte_Bewerbung\TerminPlaner
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sat Jun 26 09:23:58 CEST 2021:
+Shutting down instance 44c541fa-017a-472e-1e87-0000073a49a0 on database directory C:\Users\lunat\Documents\Projekte_Bewerbung\TerminPlaner\mydb with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@11028347 
+Sat Jun 26 09:23:58 CEST 2021 Thread[Thread-64,5,main] Cleanup action starting
+ERROR XBM0I: Directory mydb cannot be removed.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.services.monitor.Monitor.removePersistentService(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection$6.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:554)
+	at org.apache.derby.impl.jdbc.EmbedConnection.removePersistentService(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver$1.run(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver$1.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:554)
+	at org.apache.derby.jdbc.InternalDriver.getNewEmbedConnection(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver$LoginCallable.call(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver$LoginCallable.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Cleanup action completed
+Sat Jun 26 09:23:58 CEST 2021 Thread[Thread-64,5,main] Cleanup action starting
+ERROR XBM0I: Directory mydb cannot be removed.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.services.monitor.Monitor.removePersistentService(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection$6.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:554)
+	at org.apache.derby.impl.jdbc.EmbedConnection.removePersistentService(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver$1.run(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver$1.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:554)
+	at org.apache.derby.jdbc.InternalDriver.getNewEmbedConnection(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver$LoginCallable.call(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver$LoginCallable.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Cleanup action completed

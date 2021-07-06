@@ -1,0 +1,98 @@
+@media screen and (max-width: 768px) {
+	/* small screen*/
+	.hideable-column { display: none}
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+.selected {
+	background: #9cc4fa;
+	color: #000;
+	font-weight: bold;
+}
+
+html body .card, #table {
+	border-radius: 15px;
+	overflow: hidden
+}
+
+html body .card-header, .thead {
+	background: #4993f5;
+	color: #fff
+}
+
+html body .card-header .prevMonth {
+	cursor: pointer
+}
+
+html body .card-header .nextMonth {
+	cursor: pointer
+}
+
+html body .card-body, #table{
+	background: #c7ddfc
+}
+
+html body .card-body .dates span {
+	background: #9cc4fa;
+	color: #000;
+	border-radius: 50%;
+	display: inline-block;
+	height: 45px;
+	width: 45px;
+	line-height: 45px;
+	cursor: pointer
+}
+
+html body .card-body .dates span.active, html body .card-body .dates span:hover:not(.sunday) 
+	{
+	background: #ffeef0;
+	color: #000
+}
+
+html body .card-body .dates span.ntMonth {
+	color: #938e8e;
+	background: #edf4fe
+}
+
+html body .card-body .dates span.ntMonth:hover {
+	background: #ffeef0;
+	color: #000
+}
+
+html body .card#event .card-header .close {
+	color: #fff;
+	opacity: 1
+}
+
+
+@media ( max-width : 768px) {
+	html body .pa-sm {
+		position: absolute
+	}
+	html body .card-body .days span {
+		height: 38px;
+		width: 38px;
+		line-height: 38px;
+		font-size: .8rem
+	}
+	html body .card-body .dates span {
+		height: 38px;
+		width: 38px;
+		line-height: 38px;
+		font-size: .8rem
+	}
+	
+	#table tr {		
+		line-height: 15px;
+		font-size: .8rem
+	}
+} 
