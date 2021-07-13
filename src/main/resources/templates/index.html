@@ -5,7 +5,7 @@
     <div class="container">        
         <div class="col-sm-10 mx-auto text-center mt-5">
             <h1>Store Customer Schedule</h1>
-            <p>Calendar for scheduling Customer visits during pandemic restrictions</p>
+            <p>Calendar for scheduling customer visits during pandemic restrictions</p>
         </div>
        
         <div th:if="${message != null}" class="alert alert-success text-center">[[${message}]]</div>
@@ -47,6 +47,9 @@
                         <button type="button" class="close hide">
                             <span aria-hidden="true">&times;</span>
                         </button>
+                        <div class="text-center">
+                       		<a class="btn btn-dark" type="button" id="createEvent" th:href="@{'new/' + ${millisec}}">Create new appointment</a>
+                        </div>
                     </div>
                     <div class="card-body px-1 py-3">
                         <table class="table table-sm table-hover" >  
@@ -72,13 +75,13 @@
 	                         	</th:block>
                         	</tbody>
                         </table>
-                        <div class="text-center">
-                        	<a class="btn btn-primary" type="button" id="createEvent" th:href="@{'new/' + ${millisec}}">Create new appointment</a>
-                        </div>                        
                     </div>
                 </div>                            
             </div>
-        </div>            
+        </div>          
+        
+        <div th:replace="fragments :: footer"></div>
+          
 	</div>
 	
 	<div class="modal fade text-center" id="confirmModal">

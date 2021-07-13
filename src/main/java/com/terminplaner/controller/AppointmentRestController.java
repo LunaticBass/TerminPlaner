@@ -51,4 +51,20 @@ public class AppointmentRestController {
 
 		return appService.checkIfAppointmentIsOK(appointment);
 	}
+	
+	@PostMapping("/appointments/check_available_slots")
+	public Integer checkAvailableSlots(@Param("deptId") Integer deptId, @Param("millisec") Long millisec, @Param("purpose") String purpose) {
+		Department department = appService.findDepartmentById(deptId);	
+		Date date = new Date(Long.valueOf(millisec));
+		System.out.println(purpose);
+		
+		
+		Appointment appointment = new Appointment();
+		appointment.setDepartment(department);
+		appointment.setPurposeOfVisit(purpose);
+		appointment.setDateOfVisit(date);
+		
+		return appService.getFreeSlots(appointment);
+	}
+	
 }

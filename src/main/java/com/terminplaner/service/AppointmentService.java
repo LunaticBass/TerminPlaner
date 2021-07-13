@@ -53,7 +53,7 @@ public class AppointmentService {
 	
 	public String checkIfAppointmentIsOK (Appointment appointment) {
 		boolean customerIsAvailable = checkCustomerAvailability(appointment);
-		boolean departmentHasCapacity = checkIfDepartmentHasCapacity(appointment);
+		boolean departmentHasCapacity = getFreeSlots(appointment) > 0;
 	
 		if (!departmentHasCapacity && !customerIsAvailable) {
 			return "BothError";
@@ -98,7 +98,7 @@ public class AppointmentService {
 		return true;
 	}
 	
-	private boolean checkIfDepartmentHasCapacity(Appointment appointmentToCheck) {
+	public Integer getFreeSlots(Appointment appointmentToCheck) {
 		Date dateToCheckStart = appointmentToCheck.getDateOfVisit();
 		Date dateToCheckEnd = appointmentToCheck.getEndDate();
 		
@@ -123,8 +123,10 @@ public class AppointmentService {
 				customersPresent++;
 			} 
 		}
-		return customersPresent + 1 <= department.getMaxCustomer();
-	}
+		
+		int freeSlots = department.getMaxCustomer() - customersPresent;
+		return Math.max(0, freeSlots);
+	}	
 
 	public Department findDepartmentById(Integer deptId) {
 		List<Department> listDepartments = listDepartments();

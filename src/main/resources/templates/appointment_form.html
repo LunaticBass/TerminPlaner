@@ -53,6 +53,18 @@
 		                        	<label class="col-form-label col-auto">Time of visit:</label>
 									<input class="form-control col-auto" type="datetime-local" th:field="*{dateOfVisit}" th:min="${date} + 'T09:30'" th:max="${date} + 'T18:00'" required>
 		                        </div>
+					            
+  		                       	<div class="form-group row">
+									<label class="col-form-label col-auto">Purpose of visit:</label>
+									<div class="form-check-inline">
+  										<input th:field="*{purposeOfVisit}" class="form-check-input" type="radio" name="purpose" value="Testing" checked required>
+  										<label class="form-check-label">Testing</label>
+  										&nbsp;&nbsp;										
+									  	<input th:field="*{purposeOfVisit}" class="form-check-input" type="radio" name="purpose" value="Click & Collect" required>
+									  	<label class="form-check-label">Click & Collect</label>
+									</div>
+								</div> 
+					            
 					            <div class="form-group row">
 									<label class="col-form-label col-auto">Department:</label>
 									<select class="form-control col-auto" required th:field="*{department}">
@@ -63,16 +75,9 @@
 									</select>
 								</div>
 								
-		                        <div class="form-group row">
-									<label class="col-form-label col-auto">Purpose of visit:</label>
-									<div class="form-check-inline">
-  										<input th:field="*{purposeOfVisit}" class="form-check-input" type="radio" name="purpose" value="Testing" checked required>
-  										<label class="form-check-label">Testing</label>
-  										&nbsp;&nbsp;										
-									  	<input th:field="*{purposeOfVisit}" class="form-check-input" type="radio" name="purpose" value="Click & Collect" required>
-									  	<label class="form-check-label">Click & Collect</label>
-									</div>
-								</div>   
+								<div class="form-group row">
+									<label class="col-form-label col-auto font-weight-bold" id="freeSlots"></label>
+								</div> 
 		                    </div>                        
 		                </div>
 		            </div>                            
@@ -105,10 +110,12 @@
 			</div>
 		</div>
         
+        <div th:replace="fragments :: footer"></div>
+        
 	</div>
+	
 	<script type="text/javascript">
 		function checkEmailUnique(form) {
-			console.log("ITT");
 			url = "[[@{/customers/check_email}]]";
 			custEmail = $("#email").val();
 			custId = $("#custId").val();
@@ -152,9 +159,47 @@
 				showModalDialog("Could not connect to the server");
 			});			
 			return false;
-		}	
+		}
 		
+		$("#buttonCancel").on("click", function() {
+			window.location = "/TerminPlaner";
+		});
+
+		function showModalDialog(message) {
+			$("#modalTitle").text("Warning");
+			$("#modalBody").text(message);
+			$("#modalDialog").modal();
+		}
+
+		function checkAvailableSlots() {
+			url = "[[@{/appointments/check_available_slots}]]";
+
+			deptId = $("#department").val();
+			millisec = new Date($("#dateOfVisit").val()).getTime();
+			purpose = $("[type='radio']:checked").val();
+
+			params = { deptId: deptId, millisec: millisec, purpose: purpose };
+
+			$.post(url, params, function(response) {
+				$("#freeSlots").html("Available free slots at this time: " + response);
+			}).fail(function() {
+				showModalDialog("Could not connect to the server");
+			});
+			return false;
+		}
+
+		$("#department").on("click", function() {
+			if ($("#department").val() != 0) {
+				var dateWithTime = $("#dateOfVisit").val();
+				var purpose = $("[type='radio']:checked").val();
+
+				if (dateWithTime != "" && purpose != null) {
+					checkAvailableSlots();
+				}
+			} else {
+				$("#freeSlots").html("");
+			}
+		});
 	</script>
-	<script th:src="@{/js/form.js}"></script>
 </body>
 </html>
